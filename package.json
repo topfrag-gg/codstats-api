@@ -1,0 +1,56 @@
+{
+	"name": "codstats-api",
+	"displayName": "CODStats API",
+	"version": "0.0.0",
+	"private": true,
+	"description": "API for tracking Call of Duty League and Challengers statistics",
+  "author": {
+		"name": "mister-fix",
+		"url": "https://github.com/mister-fix/"
+	},
+	"license": "MIT",
+	"homepage": "https://github.com/mister-fix/codstats-api#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mister-fix/codstats-api.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mister-fix/codstats-api/issues"
+	},
+	"keywords": [
+		"codstats",
+		"call-of-duty",
+		"call-of-duty-league",
+		"cdl",
+		"challengers",
+		"esports",
+		"stats",
+		"statistics",
+		"gaming-api",
+		"esports-api",
+		"cod-api",
+		"express",
+		"typescript",
+		"nodejs",
+		"rest-api",
+		"multiplayer",
+		"leaderboards",
+		"matches",
+		"players",
+		"teams"
+	],
+	"type": "module",
+  "scripts": {
+    "prepare": "husky",
+		"spellcheck": "cspell ** --dot"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@commitlint/format": "^19.8.0",
+    "@cspell/dict-filetypes": "^3.0.12",
+    "cspell": "^9.0.0",
+    "cspell-dictionary": "^9.0.0",
+    "husky": "^9.1.7"
+  }
+}
