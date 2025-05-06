@@ -1,0 +1,9 @@
+choosealicense
+jscoverage
+nuxt
+pids
+rxaviers
+stylelintcache
+wscript
+misterfix
+maxsockets
