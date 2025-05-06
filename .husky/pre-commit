@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+# . "$(dirname -- "$0")/_/husky.sh"
+
+# 1. Run spellcheck ONLY on staged files that exist
+if [ -n "$STAGED_FILES" ]; then
+  echo "$STAGED_FILES" | xargs npx cspell --no-progress --no-summary --no-must-find-files
+fi
