@@ -1,0 +1,35 @@
+{
+	"files.eol": "\n",
+	"files.autoSave": "off",
+	"files.defaultLanguage": "",
+	"files.insertFinalNewline": true,
+	"files.trimTrailingWhitespace": true,
+	"files.exclude": {
+		"**/.git": true,
+		"**/.DS_Store": true,
+		"**/dist": true,
+		"**/node_modules": true
+	},
+	"files.associations": {
+		"*.env": "dotenv"
+	},
+	"editor.acceptSuggestionOnEnter": "off",
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnPaste": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "always",
+		"source.fixAll.eslint": "always",
+		"source.organizeImports": "always",
+	},
+	"editor.wordWrap": "wordWrapColumn",
+	"editor.wordWrapColumn": 80,
+	"editor.tabSize": 2,
+	"terminal.integrated.defaultProfile.linux": "bash",
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+
+	// Overrides
+	"[package.json]": {
+		"editor.wordWrap": "off",
+	}
+}
