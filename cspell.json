@@ -1,0 +1,36 @@
+{
+	"version": "0.2",
+	"ignorePaths": [
+		"node_modules", "dist", "out", "build", "logs", "coverage", ".git", ".husky/_", ".vscode/", ".env", ".env.local", ".env.example", ".env.development", ".env.production", ".env.test", ".env.staging", ".env.development.local", ".env.production.local", ".env.test.local", ".env.staging.local", "public", "test", "tests"
+	],
+	"languageSettings": [
+		{
+			"languageId": "*",
+			"locale": "en-US"
+		}
+	],
+	"dictionaries": [
+		"npm",
+		"cspell-dictionary",
+		"project-dependencies",
+		"project-terms",
+	],
+	"dictionaryDefinitions": [
+		{
+			"name": "project-terms",
+			"path" :"./.cspell/project-terms.txt",
+			"addWords": true
+		},
+		{
+			"name": "project-dependencies",
+			"path" :"./.cspell/project-dependencies.txt",
+			"addWords": true
+		}
+	],
+	"files": ["**/*.{txt,md,json,js,cjs,mjs,ts,yml,yaml,toml}"],
+	"words": ["API"],
+	"ignoreWords": ["topfrag", "codstats", "cod", "cdl", "esports", "ccl"],
+	"import": [
+		"@cspell/dict-filetypes/cspell-ext.json"
+	]
+}
