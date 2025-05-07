@@ -51,10 +51,6 @@
 		"spellcheck": "cspell ** --dot"
 	},
 	"lint-staged": {
-		"{index.ts, src/**/*.ts}": [
-			"eslint --fix --cache --cache-location node_modules/.cache/eslint",
-			"prettier --write"
-		],
 		"*.{js,cjs,mjs}": [
 			"eslint --fix --cache --cache-location node_modules/.cache/eslint",
 			"prettier --write"
