@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -10,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 
 - **CI/CD & Automation**:
+  - `.github/workflows/lint.yml`: Added to automate ESLint and Prettier checks on the repository.
   - `.github/workflows/commitlint.yml`: Added workflow for pushed commit message linting.
   - `.github/workflows/spellcheck.yml`: Added workflow to check for spelling errors on pushed commits.
 - **Git Hooks**:
@@ -20,6 +23,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - `cspell.json`: Configuration for code and documentation spell checking.
   - `.cspell/project-dependencies.txt`: Dictionary with names of dependencies that CSpell doesn't recognize.
   - `.cspell/project-terms.txt`: Dictionary with project specific terms.
+  - Installed and configured ESLint with TypeScript support for code quality and static analysis.
+  - Installed and configured Prettier for consistent code formatting.
+  - Installed `npm-run-all` to orchestrate sequential/parallel npm scripts.
+  - Added `lint`, `lint:fix`, `lint:all`, `prettier:check`, `prettier:fix`, `format`, and `spellcheck` scripts to
+    `package.json` for streamlined development workflows.
 - **Project Infrastructure**:
   - `.editorconfig`: Added to ensure consistent file and code formatting across different editors and IDEs.
   - `.gitattributes`: Added to handle line endings and file types in Git, ensuring consistency across platforms.
@@ -33,5 +41,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - `LICENSE`: Added open-source [project license](./LICENSE) MIT License.
   - `CHANGELOG.md`: Added to document all notable changes to the project.
   - `README.md`: Added to provide an overview of the project.
+
+### Changed
+
+- Fixed and enhanced the pre-commit hook to lint, format, and spellcheck staged files only.
+- Updated VSCode workspace settings in `.vscode/settings.json`:
+  - Excluded `dist` and `node_modules` directories from file explorer.
+  - Enabled Prettier config requirement with `"prettier.requireConfig": true` and specified config path.
+  - Configured JavaScript formatting preferences (single quotes, semicolons, braces placement).
+- Prettier formatting applied to commitlint config, GitHub workflows, LICENSE file, and README.md.
 
 [Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/main%40%7B1day%7D...HEAD
