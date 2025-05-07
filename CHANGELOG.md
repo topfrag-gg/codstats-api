@@ -9,6 +9,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Added
 
+- **CI/CD & Automation**:
+  - `.github/workflows/commitlint.yml`: Added workflow for pushed commit message linting.
+  - `.github/workflows/spellcheck.yml`: Added workflow to check for spelling errors on pushed commits.
 - **Git Hooks**:
   - `.husky/commit-msg`: Added to check commit message format with Commitlint.
   - `.husky/pre-commit`: Added to lint, format, and spell check staged files.
