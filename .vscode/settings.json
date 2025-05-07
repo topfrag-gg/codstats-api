@@ -7,8 +7,8 @@
 	"files.exclude": {
 		"**/.git": true,
 		"**/.DS_Store": true,
-		"**/dist": true,
-		"**/node_modules": true
+		"**/dist": false,
+		"**/node_modules": false
 	},
 	"files.associations": {
 		"*.env": "dotenv"
@@ -20,16 +20,20 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll": "always",
 		"source.fixAll.eslint": "always",
-		"source.organizeImports": "always",
+		"source.organizeImports": "always"
 	},
 	"editor.wordWrap": "wordWrapColumn",
 	"editor.wordWrapColumn": 80,
 	"editor.tabSize": 2,
 	"terminal.integrated.defaultProfile.linux": "bash",
 	"terminal.integrated.defaultProfile.windows": "Git Bash",
-
-	// Overrides
+	"prettier.requireConfig": true,
+	"prettier.configPath": "./.prettierrc",
+	"javascript.preferences.quoteStyle": "single",
+	"javascript.format.semicolons": "insert",
+	"javascript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+	"javascript.format.placeOpenBraceOnNewLineForFunctions": false,
 	"[package.json]": {
-		"editor.wordWrap": "off",
+		"editor.wordWrap": "off"
 	}
 }
