@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # TopFrag API
 
 ![License](https://img.shields.io/github/license/mister-fix/codstats-api?color=blue)
@@ -12,9 +14,12 @@
 
 ## Overview
 
-The **CODStats API** is the backend for **CODStats**, a statistics and insights platform dedicated to the **Call of Duty League (CDL)** and the **Call of Duty Challengers** scene. It provides competitive players, fans, and analysts with access to rich eSports data, including player stats, match breakdowns, seasonal leaderboards, and more.
+The **CODStats API** is the backend for **CODStats**, a statistics and insights platform dedicated to the **Call of Duty
+League (CDL)** and the **Call of Duty Challengers** scene. It provides competitive players, fans, and analysts with
+access to rich eSports data, including player stats, match breakdowns, seasonal leaderboards, and more.
 
-This RESTful API is designed for performance, scalability, and developer experience. It powers the core functionality of CODStats across:
+This RESTful API is designed for performance, scalability, and developer experience. It powers the core functionality of
+CODStats across:
 
 - Player & team statistics
 - Leaderboard generation
@@ -45,7 +50,8 @@ This project is licensed under the [MIT License](./LICENSE). You can learn more 
 
 ## Contact
 
-For questions, suggestions, or contributions, open an issue or email: [hellostephenwm@gmail.com](mailto:hellostephenwm@gmail.com).
+For questions, suggestions, or contributions, open an issue or email:
+[hellostephenwm@gmail.com](mailto:hellostephenwm@gmail.com).
 
 ## Miscellaneous
 
