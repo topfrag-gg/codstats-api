@@ -50,5 +50,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Enabled Prettier config requirement with `"prettier.requireConfig": true` and specified config path.
   - Configured JavaScript formatting preferences (single quotes, semicolons, braces placement).
 - Prettier formatting applied to commitlint config, GitHub workflows, LICENSE file, and README.md.
+- Updated `.prettierignore` to exclude `package-lock.json` from formatting checks.
 
 [Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/main%40%7B1day%7D...HEAD
