@@ -143,3 +143,8 @@ plop-templates/*.hbs
 
 # Prettier config file
 .prettierrc
+
+# Project root lockfile
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
