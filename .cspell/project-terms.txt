@@ -7,3 +7,14 @@ stylelintcache
 wscript
 misterfix
 maxsockets
+bootstrapper
+pjson
+eventsource
+mdast
+filereader
+typedarrays
+asyncgenerator
+asynciterable
+frameguard
+hsts
+formdata
