@@ -34,7 +34,7 @@ export default defineConfig([
 		plugins: { json },
 		language: 'json/json',
 		extends: ['json/recommended'],
-		ignores: ['package-lock.json'],
+		ignores: ['package-lock.json', 'tsconfig.json'],
 	},
 
 	// Markdown files
