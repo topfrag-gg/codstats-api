@@ -1,0 +1,18 @@
+{
+	"recommendations": [
+		"aaron-bond.better-comments",
+		"streetsidesoftware.code-spell-checker",
+		"mikestead.dotenv",
+		"editorconfig.editorconfig",
+		"dbaeumer.vscode-eslint",
+		"donjayamanne.githistory",
+		"github.vscode-github-actions",
+		"eamodio.gitlens",
+		"davidanson.vscode-markdownlint",
+		"cardinal90.multi-cursor-case-preserve",
+		"christian-kohler.npm-intellisense",
+		"christian-kohler.path-intellisense",
+		"yoavbls.pretty-ts-errors",
+		"esbenp.prettier-vscode"
+	]
+}
