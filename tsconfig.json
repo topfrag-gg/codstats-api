@@ -1,0 +1,83 @@
+{
+	"compilerOptions": {
+		/* Visit https://aka.ms/tsconfig to read more about this file */
+
+		/* Projects */
+		"incremental": true,
+		"tsBuildInfoFile": "./.tsbuildinfo",
+
+		/* Language and Environment */
+		"target": "ES2020",
+		"lib": ["ES2020"],
+		"moduleDetection": "force",
+
+		/* Modules */
+		"module": "ESNext",
+		"rootDir": "./",
+		"moduleResolution": "Node",
+		"baseUrl": "./",
+		"paths": {
+			"@/*": ["./*"],
+			"@/src/*": ["./src/*"]
+		},
+		"typeRoots": ["./node_modules/@types/"],
+		"noUncheckedSideEffectImports": true,
+		"resolveJsonModule": true,
+
+		/* JavaScript Support */
+		"allowJs": true,
+
+		/* Emit */
+		"sourceMap": true,
+		"noEmit": false,
+		"outDir": "dist",
+		"removeComments": true,
+		"importHelpers": true,
+		"newLine": "lf",
+
+		/* Interop Constraints */
+		"isolatedModules": true,
+		"verbatimModuleSyntax": false,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+
+		/* Type Checking */
+		"strict": true,
+		"noImplicitAny": true,
+		// "noImplicitThis": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+
+		/* Completeness */
+		"skipLibCheck": true,
+
+		/* Plugins */
+		"plugins": [
+			{
+				"transform": "typescript-transform-paths",
+				"before": true,
+				"afterDeclarations": true
+			}
+		]
+	},
+	"ts-node": {
+		"esm": true,
+		"experimentalSpecifierResolution": "node",
+		"require": ["tsconfig-paths/register"],
+		"transpileOnly": true
+	},
+	"tsc-alias": {
+		"verbose": false,
+		"resolveFullPaths": true,
+		"fileExtensions": {
+			"inputGlob": "{js,ts}",
+			"outputCheck": ["js", "json", "cjs", "mjs"]
+		}
+	},
+	"include": ["index.ts", "src/**/*"],
+	"exclude": ["node_modules", "dist"]
+}
