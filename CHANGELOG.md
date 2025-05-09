@@ -11,8 +11,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Added
 
+- **Deployment**:
+  - `fly.toml`: Configuration file for deploying the API to [Fly.io](https://fly.io/).
+  - `Dockerfile`: Added to containerize the API for cloud deployment.
+  - `.dockerignore`: Added tp exclude unnecessary files from Docker build context.
 - **CI/CD & Automation**:
-  - `.github/workflows/lint.yml`: Added to automate ESLint and Prettier checks on the repository.
+  - `.github/workflows/fly-deploy.yml`: Added workflow to automate API deployment to Fly.io.
+  - `.github/workflows/lint.yml`: Added workflow to automate ESLint and Prettier checks on the repository.
   - `.github/workflows/commitlint.yml`: Added workflow for pushed commit message linting.
   - `.github/workflows/spellcheck.yml`: Added workflow to check for spelling errors on pushed commits.
 - **Git Hooks**:
