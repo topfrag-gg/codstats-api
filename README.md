@@ -28,6 +28,47 @@ CODStats across:
 - Historical performance tracking and comparisons
 - Secure access with authentication & roles
 
+## Project Structure
+
+```ASCII
+codstats-api/
+├─ .cspell/                   # Custom CSpell dictionaries
+├─ .github/                   # GitHub configurations (workflows, settings, etc.)
+│  ├─ workflows/
+├─ .husky/                    # Husky hooks for Git (e.g., pre-commit, pre-push)
+├─ .vscode/                   # VSCode settings (extensions, workspace configs)
+├─ config/                    # Environment-specific configurations (default, production)
+├─ public/                    # Static assets (favicon, etc.)
+├─ scripts/                   # Custom scripts (build, deployment automation)
+├─ src/                       # Application source code
+│  ├─ libs/                   # Core express setup, CORS, helmet
+│  ├─ middleware/             # API middleware (error, redirect, 404)
+│  ├─ routes/                 # Route handlers (index, health, etc.)
+│  ├─ app.ts                  # Express app instance
+│  ├─ server.ts               # Server bootstrap
+├─ .dockerignore              # Files and folders to exclude from Docker build context
+├─ .editorconfig              # Code style consistency across different editors/IDEs
+├─ .gitattributes             # Git settings for end-of-line handling, diffs, etc.
+├─ .gitignore                 # Specifies intentionally untracked files to ignore in Git
+├─ .npmrc                     # NPM configuration (e.g., save-exact, registry settings)
+├─ .nvmrc                     # Node.js version file for NVM
+├─ .prettierignore            # Files/folders ignored by Prettier
+├─ .prettierrc                # Prettier formatting rules
+├─ CHANGELOG.md               # Project changelog with version history
+├─ commitlint.config.js       # Commit message linting rules
+├─ cspell.json                # Custom spell-checking configuration (CSpell)
+├─ Dockerfile                 # Docker build instructions for the API container
+├─ eslint.config.js           # ESLint configuration using flat config format
+├─ fly.toml                   # Fly.io deployment configuration
+├─ index.ts                   # Main entry point for the API
+├─ LICENSE                    # Project license (MIT)
+├─ nodemon.json               # Development config for automatic restarts
+├─ package-lock.json          # Lockfile for dependency consistency
+├─ package.json               # Project metadata, scripts, and dependency definitions
+├─ README.md                  # Project overview, setup instructions, and documentation
+└─ tsconfig.json              # TypeScript configuration
+```
+
 ## Author
 
 Created and maintained by [@mister-fix](https://github.com/mister-fix/).
