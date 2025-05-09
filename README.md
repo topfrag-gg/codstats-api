@@ -2,15 +2,15 @@
 
 # TopFrag API
 
-![License](https://img.shields.io/github/license/mister-fix/codstats-api?color=blue)
-![Version](https://img.shields.io/github/v/tag/mister-fix/codstats-api?label=version&color=orange)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/mister-fix/codstats-api/commitlint.yml)
+![GitHub License](https://img.shields.io/github/license/topfrag-gg/codstats-api?color=blue)
+![Version](https://img.shields.io/github/v/tag/topfrag-gg/codstats-api)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/topfragg-gg/codstats-api/commitlint.yml)
 ![Contributors](https://img.shields.io/static/v1?label=contributors&message=1&color=purple)
-![Repo size](https://img.shields.io/github/repo-size/mister-fix/codstats-api?color=yellow)
-![Code size](https://img.shields.io/github/languages/code-size/mister-fix/codstats-api?color=red)
-![Files](https://img.shields.io/github/directory-file-count/mister-fix/codstats-api?color=skyblue)
-![Stars](https://img.shields.io/github/stars/mister-fix/codstats-api?style=social)
-![Watchers](https://img.shields.io/github/watchers/mister-fix/codstats-api?style=social)
+![Repo size](https://img.shields.io/github/repo-size/topfragg-gg/codstats-api?color=yellow)
+![Code size](https://img.shields.io/github/languages/code-size/topfragg-gg/codstats-api?color=red)
+![Files](https://img.shields.io/github/directory-file-count/topfragg-gg/codstats-api?color=skyblue)
+![Stars](https://img.shields.io/github/stars/topfragg-gg/codstats-api?style=social)
+![Watchers](https://img.shields.io/github/watchers/topfragg-gg/codstats-api?style=social)
 
 ## Overview
 

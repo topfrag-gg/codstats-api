@@ -83,7 +83,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Enabled Prettier config requirement with `"prettier.requireConfig": true` and specified config path.
   - Configured JavaScript formatting preferences (single quotes, semicolons, braces placement).
 - Prettier formatting applied to commitlint config, GitHub workflows, LICENSE file, and README.md.
-- Updated `.prettierignore` to exclude `package-lock.json` from formatting checks.
+- Updated `.prettierignore` to exclude `package-lock.json`, and `LICENSE` file from formatting and formatting checks.
 - Updated ESLint config to ignore `tsconfig.json` when linting JSON files.
 - Updated CSpell config to include TypeScript dictionary.
 - Expanded custom project terms dictionary for CSPell with new terms.
@@ -96,11 +96,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Fixed
 
-- N/A (no fixes in this release)
+- Fixed the links attached to the [shields.io/](https://shields.io/) badges at the top of the `README.md`.
 
 ### Removed
 
-- N/A (no removals in this release)
+- Removed Prettier format pragma from the top of the `LICENSE` file to ensure correct license detection by GitHub.
 
 ### Refactored
 
