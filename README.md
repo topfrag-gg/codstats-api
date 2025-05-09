@@ -6,11 +6,11 @@
 ![Version](https://img.shields.io/github/v/tag/topfrag-gg/codstats-api)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/topfragg-gg/codstats-api/commitlint.yml)
 ![Contributors](https://img.shields.io/static/v1?label=contributors&message=1&color=purple)
-![Repo size](https://img.shields.io/github/repo-size/topfragg-gg/codstats-api?color=yellow)
-![Code size](https://img.shields.io/github/languages/code-size/topfragg-gg/codstats-api?color=red)
-![Files](https://img.shields.io/github/directory-file-count/topfragg-gg/codstats-api?color=skyblue)
-![Stars](https://img.shields.io/github/stars/topfragg-gg/codstats-api?style=social)
-![Watchers](https://img.shields.io/github/watchers/topfragg-gg/codstats-api?style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/topfrag-gg/codstats-api?color=yellow)
+![GitHub code size](https://img.shields.io/github/languages/code-size/topfrag-gg/codstats-api?color=red)
+![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/topfrag-gg/codstats-api?color=skyblue)
+![GitHub Repo stars](https://img.shields.io/github/stars/topfrag-gg/codstats-api)
+![GitHub watchers](https://img.shields.io/github/watchers/topfrag-gg/codstats-api)
 
 ## Overview
 
