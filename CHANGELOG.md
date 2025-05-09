@@ -9,12 +9,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [0.1.0] - 2025-05-09
+
 ### Added
 
 - **Deployment**:
   - `fly.toml`: Configuration file for deploying the API to [Fly.io](https://fly.io/).
   - `Dockerfile`: Added to containerize the API for cloud deployment.
-  - `.dockerignore`: Added tp exclude unnecessary files from Docker build context.
+  - `.dockerignore`: Added to exclude unnecessary files from Docker build context.
 - **CI/CD & Automation**:
   - `.github/workflows/fly-deploy.yml`: Added workflow to automate API deployment to Fly.io.
   - `.github/workflows/lint.yml`: Added workflow to automate ESLint and Prettier checks on the repository.
@@ -38,6 +40,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - `.gitattributes`: Added to handle line endings and file types in Git, ensuring consistency across platforms.
   - `.gitignore`: Added to exclude unnecessary files (e.g., `node_modules`, etc.) from version control.
   - `.npmrc`: Added config settings for the `npm` CLI.
+  - `.nvmrc`: Added to specify the Node.js version for consistent development environments.
   - `.vscode/extensions.json`: Added list of recommended VSCode extensions.
   - `.vscode/settings.json`: Added to establish workspace settings for contributors on VSCode.
 - **Project Metadata**:
@@ -85,5 +88,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Updated CSpell config to include TypeScript dictionary.
 - Expanded custom project terms dictionary for CSPell with new terms.
 - Updated `lint-staged` in `package.json` to include TypeScript files.
+- Replaced Windows-specific `rd /s /q` clean command with cross-platform `rimraf`.
+- Installed `open-cli` and updated the `docs` script to work cross-platform.
+- Refactored `scripts/build.js` to delegate all cleanup steps to the `clean` script.
+- Added new scripts to `package.json`: `start:prod`, `type-check`, `clean`, `reset`, `deploy`, and `docs`.
+- Added [project structure](./README.md#project-structure) section to `README.md` file.
 
-[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/main%40%7B1day%7D...HEAD
+### Fixed
+
+- N/A (no fixes in this release)
+
+### Removed
+
+- N/A (no removals in this release)
+
+### Refactored
+
+- N/A (no refactors in this release)
+
+[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/topfrag-gg/codstats-api/releases/tag/v0.1.0
