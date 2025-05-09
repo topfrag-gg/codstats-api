@@ -93,6 +93,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Refactored `scripts/build.js` to delegate all cleanup steps to the `clean` script.
 - Added new scripts to `package.json`: `start:prod`, `type-check`, `clean`, `reset`, `deploy`, and `docs`.
 - Added [project structure](./README.md#project-structure) section to `README.md` file.
+- Project name in the main heading of the `README.md` file.
 
 ### Fixed
 
