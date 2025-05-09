@@ -1,11 +1,11 @@
 <!-- @format -->
 
-# TopFrag API
+# CODStats API
 
 ![GitHub License](https://img.shields.io/github/license/topfrag-gg/codstats-api?color=blue)
 ![Version](https://img.shields.io/github/v/tag/topfrag-gg/codstats-api)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/topfragg-gg/codstats-api/commitlint.yml)
-![Contributors](https://img.shields.io/static/v1?label=contributors&message=1&color=purple)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/topfrag-gg/codstats-api/build.yml)
+![Contributors](https://img.shields.io/static/v1?label=contributors&message=1&color=magenta)
 ![GitHub repo size](https://img.shields.io/github/repo-size/topfrag-gg/codstats-api?color=yellow)
 ![GitHub code size](https://img.shields.io/github/languages/code-size/topfrag-gg/codstats-api?color=red)
 ![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/topfrag-gg/codstats-api?color=skyblue)
