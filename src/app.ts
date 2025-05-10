@@ -28,7 +28,7 @@ export const createApp = () => {
 	// Create the global not
 	const notFoundHandler = createNotFoundHandler({ isProduction });
 
-	//Create the global error handler
+	// Create the global error handler
 	const errorHandler = createErrorHandler({ isProduction });
 
 	// Setup Express settings
