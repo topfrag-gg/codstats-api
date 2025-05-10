@@ -1,7 +1,6 @@
 /**
  * Commitlint configuration using conventional commits. Docs:
  * https://commitlint.js.org/reference/configuration.html
- *
  * @format
  */
 

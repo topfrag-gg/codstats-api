@@ -16,11 +16,8 @@ type NotFoundHandler = (
 
 /**
  * This middleware handles 404 Not Found errors for the application.
- *
- * @param isProduction - Boolean indicating whether the app is running in
- *   production mode.
- * @param logger - A logging utility with a `warn` method.
- * @returns NotFoundHandler - A middleware function that handles 404 errors.
+ * @param {boolean} isProduction - Indicates if the application is running in production mode.
+ * @returns {NotFoundHandler} - A middleware function that handles 404 errors.
  */
 export const createNotFoundHandler = ({
 	isProduction,
