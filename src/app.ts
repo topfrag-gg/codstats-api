@@ -21,10 +21,13 @@ import { setupRoutes } from './routes/index.routes';
 export const createApp = () => {
 	// Create the Express application instance
 	const app: Express = express();
+
 	// Determine if the environment is production
 	const isProduction = config.get('env') === 'production';
+
 	// Create the global not
 	const notFoundHandler = createNotFoundHandler({ isProduction });
+
 	//Create the global error handler
 	const errorHandler = createErrorHandler({ isProduction });
 
