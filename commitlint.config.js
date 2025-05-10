@@ -68,7 +68,6 @@ const Configuration = {
 						title: 'Bug Fixes',
 						emoji: '🐛',
 					},
-					// Additional types can be added here
 				},
 			},
 			scope: {
