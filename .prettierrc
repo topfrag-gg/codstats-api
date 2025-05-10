@@ -9,7 +9,6 @@
 	"insertPragma": true,
 	"proseWrap": "preserve",
 	"embeddedLanguageFormatting": "auto",
-	"plugins": ["prettier-plugin-jsdoc"],
 	"overrides": [
 		{ "files": "*.{cmp,page}", "options": { "parser": "html" } },
 		{
