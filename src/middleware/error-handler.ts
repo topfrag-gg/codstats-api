@@ -1,6 +1,5 @@
 /** @format */
 
-// Import modules
 import { Request, Response } from 'express';
 import console from 'node:console';
 
