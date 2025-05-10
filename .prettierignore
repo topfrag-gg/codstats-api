@@ -147,7 +147,7 @@ plop-templates/*.hbs
 # Project root lockfile
 package-lock.json
 yarn.lock
-pnpm-lock.
+pnpm-lock.yaml
 
 # LICENSE
 LICENSE
