@@ -1,5 +1,7 @@
 /** @format */
 
+import path from 'node:path';
+import process from 'node:process';
 import compression from 'compression';
 import config from 'config';
 import cors from 'cors';
@@ -7,8 +9,6 @@ import express, { Express, Request } from 'express';
 import { rateLimit } from 'express-rate-limit';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import path from 'node:path';
-import process from 'node:process';
 import favicon from 'serve-favicon';
 import { corsOptions } from './libs/cors';
 import { expressSettings, setupBodyParsers } from './libs/express';

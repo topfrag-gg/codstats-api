@@ -1,8 +1,8 @@
 /** @format */
 
+import console from 'node:console';
 import { NextFunction, Request, Response } from 'express';
 import createError from 'http-errors';
-import console from 'node:console';
 
 type NotFoundHandlerDeps = {
 	isProduction: boolean;

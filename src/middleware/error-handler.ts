@@ -1,7 +1,7 @@
 /** @format */
 
-import { Request, Response } from 'express';
 import console from 'node:console';
+import { Request, Response } from 'express';
 
 interface CustomError extends Error {
 	status?: number;

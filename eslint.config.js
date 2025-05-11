@@ -4,6 +4,9 @@
  * @format
  */
 
+import path from 'node:path';
+import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 import css from '@eslint/css';
 import js from '@eslint/js';
 import json from '@eslint/json';
@@ -20,9 +23,6 @@ import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import unusedImports from 'eslint-plugin-unused-imports';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
-import path from 'node:path';
-import process from 'node:process';
-import { fileURLToPath } from 'node:url';
 import tseslint from 'typescript-eslint';
 
 const __filename = fileURLToPath(import.meta.url);

@@ -1,9 +1,9 @@
 /** @format */
 
-import { createApp } from '@/src/app';
-import config from 'config';
 import console from 'node:console';
 import { exit } from 'node:process';
+import config from 'config';
+import { createApp } from '@/src/app';
 
 export const startServer = (): void => {
 	// Load the server configuration variables
