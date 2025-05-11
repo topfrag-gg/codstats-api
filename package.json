@@ -105,6 +105,7 @@
 		"@eslint/json": "0.12.0",
 		"@eslint/markdown": "6.4.0",
 		"@flydotio/dockerfile": "0.7.10",
+		"@ianvs/prettier-plugin-sort-imports": "4.4.1",
 		"@types/compression": "1.7.5",
 		"@types/config": "3.3.5",
 		"@types/cors": "2.8.17",
