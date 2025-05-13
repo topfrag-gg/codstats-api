@@ -9,6 +9,50 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [0.1.1] - 2025-05-13
+
+### Added
+
+- Enhanced linting, formatting, and spellchecking tools.
+- **Tooling**: Integrated `@cspell/dict-docker` into the CSpell configuration.
+- **ESLint**: Installed and configured the following plugins:
+  - `eslint-plugin-prettier`
+  - `eslint-config-prettier`
+  - `eslint-plugin-jsdoc`
+  - `eslint-plugin-unicorn`
+  - `eslint-plugin-promise`
+  - `eslint-plugin-n`
+  - `eslint-plugin-security`
+  - `eslint-plugin-import`
+  - `eslint-plugin-unused-imports`
+  - `eslint-plugin-sonarjs`
+- **Prettier**: Enabled import sorting with `@ianvs/prettier-plugin-sort-imports`.
+
+### Changed
+
+- **ESLint**: Configured rules for the following plugins:
+  - `jsdoc`, `node`, `unicorn`, `promise`, `security`, `prettier`, `import`, `sonarjs`.
+- Added general ESLint rules for JavaScript and TypeScript files.
+- Added ESLint settings to `.vscode/settings.json` file.
+- **Prettier**: Updated `quoteProps` option from `"consistent"` to `"as-needed"`.
+- **Prettier**: Fixed incorrect `npm-lock.yaml` pattern in `.prettierignore` file.
+
+### Fixed
+
+- **Code & Docs**: Fixed and updated JSDoc comments in the following files:
+  - `src/middleware/error-handler.ts`
+  - `src/middleware/not-found.ts`
+  - `scripts/loader.ts`.
+
+### Refactored
+
+- **NPM Scripts**: Updated the `lint:all` script in `package.json` to also run `prettier:check`.
+
+### Removed
+
+- **Prettier**: Removed `prettier-plugin-jsdoc`.
+- **Code & Docs**: Removed unnecessary comments (`// import modules`) from middleware and route files.
+
 ## [0.1.0] - 2025-05-09
 
 ### Added
@@ -97,7 +141,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Fixed
 
-- Fixed the links attached to the [shields.io/](https://shields.io/) badges at the top of the `README.md`.
+- Fixed the links attached to the [shields.io/](https://shields.io/) badges at the top of the `README.md` file.
 
 ### Removed
 
@@ -107,5 +151,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - N/A (no refactors in this release)
 
-[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/topfrag-gg/codstats-api/releases/tag/v0.1.0
