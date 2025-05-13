@@ -1,5 +1,7 @@
 /** @format */
 
+import path from 'node:path';
+import process from 'node:process';
 import compression from 'compression';
 import config from 'config';
 import cors from 'cors';
@@ -7,8 +9,6 @@ import express, { Express, Request } from 'express';
 import { rateLimit } from 'express-rate-limit';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import path from 'node:path';
-import process from 'node:process';
 import favicon from 'serve-favicon';
 import { corsOptions } from './libs/cors';
 import { expressSettings, setupBodyParsers } from './libs/express';
@@ -21,11 +21,14 @@ import { setupRoutes } from './routes/index.routes';
 export const createApp = () => {
 	// Create the Express application instance
 	const app: Express = express();
+
 	// Determine if the environment is production
 	const isProduction = config.get('env') === 'production';
+
 	// Create the global not
 	const notFoundHandler = createNotFoundHandler({ isProduction });
-	//Create the global error handler
+
+	// Create the global error handler
 	const errorHandler = createErrorHandler({ isProduction });
 
 	// Setup Express settings

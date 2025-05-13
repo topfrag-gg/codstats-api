@@ -1,8 +1,7 @@
 /** @format */
 
-// Import modules
-import { Request, Response } from 'express';
 import console from 'node:console';
+import { Request, Response } from 'express';
 
 interface CustomError extends Error {
 	status?: number;
@@ -21,10 +20,9 @@ type ErrorHandler = (
 
 /**
  * This middleware handles errors that occur during the request lifecycle.
- *
- * @param err - The error object
- * @param _req - The request object
- * @param res - The response object
+ * @param {CustomError | Error} err - The error object
+ * @param {boolean} err.isProduction - Indicates if the application is running in production mode.
+ * @returns { void } - This function does not return any value.
  */
 export const createErrorHandler = ({
 	isProduction,

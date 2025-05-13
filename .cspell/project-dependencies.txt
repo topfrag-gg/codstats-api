@@ -2,3 +2,5 @@ commitlint
 superfly
 flyctl
 flydotio
+sonarjs
+ianvs

@@ -1,7 +1,6 @@
 /**
  * Commitlint configuration using conventional commits. Docs:
  * https://commitlint.js.org/reference/configuration.html
- *
  * @format
  */
 
@@ -69,7 +68,6 @@ const Configuration = {
 						title: 'Bug Fixes',
 						emoji: '🐛',
 					},
-					// Additional types can be added here
 				},
 			},
 			scope: {
