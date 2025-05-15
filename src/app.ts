@@ -8,13 +8,13 @@ import cors from 'cors';
 import express, { Express, Request } from 'express';
 import { rateLimit } from 'express-rate-limit';
 import helmet from 'helmet';
-import morgan from 'morgan';
 import favicon from 'serve-favicon';
 import { corsOptions } from './libs/cors';
 import { expressSettings, setupBodyParsers } from './libs/express';
 import { helmetOptions } from './libs/helmet';
 import { globalRedirect } from './middleware/api-redirect';
 import { createErrorHandler } from './middleware/error-handler';
+import { httpLogger } from './middleware/http-logger';
 import { createNotFoundHandler } from './middleware/not-found';
 import { setupRoutes } from './routes/index.routes';
 
@@ -59,7 +59,7 @@ export const createApp = () => {
 	setupBodyParsers(app);
 
 	// Log HTTP requests
-	app.use(morgan('common'));
+	app.use(httpLogger);
 
 	// Serve favicon
 	app.use(favicon(path.join(process.cwd(), 'public', 'favicon.ico')));
