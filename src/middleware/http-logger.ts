@@ -78,8 +78,8 @@ export const httpLogFormatter = (
 
 	const systemInfo =
 		skipLogging() ?
-			chalk.gray('REQ:')
-		:	`${timestamp} ${pid} [${chalk.gray('REQ')}]:`;
+			`${chalk.gray('REQ')}:`
+		:	`${timestamp} ${pid} [${chalk.gray('REQ 🛜')}]:`;
 
 	return [
 		systemInfo,
