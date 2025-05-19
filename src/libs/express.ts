@@ -1,5 +1,3 @@
-/** @format */
-
 import config from 'config';
 import express, { Application } from 'express';
 

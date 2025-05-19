@@ -1,5 +1,3 @@
-/** @format */
-
 import { exit } from 'node:process';
 import config from 'config';
 import { createApp } from './app';
