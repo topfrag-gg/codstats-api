@@ -1,7 +1,5 @@
-/** @format */
-
-import console from 'node:console';
 import { Request, Response } from 'express';
+import { logger } from '../utils/logger';
 
 interface CustomError extends Error {
 	status?: number;
@@ -45,10 +43,10 @@ export const createErrorHandler = ({
 		};
 
 		//Log the error
-		console.error('Error:', err.message);
+		logger.error('Error:', err.message);
 
 		if (!isProduction) {
-			console.error('Stack:', err.stack);
+			logger.error('Stack:', err.stack);
 		}
 
 		// Send the error response

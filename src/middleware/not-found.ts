@@ -1,8 +1,6 @@
-/** @format */
-
-import console from 'node:console';
 import { NextFunction, Request, Response } from 'express';
 import createError from 'http-errors';
+import { logger } from '../utils/logger';
 
 type NotFoundHandlerDeps = {
 	isProduction: boolean;
@@ -27,7 +25,7 @@ export const createNotFoundHandler = ({
 		const errorMessage = `The requested resource '${req.originalUrl}' was not found`;
 
 		// Log the 404 warning
-		console.warn(`[404] ${req.method}: ${req.originalUrl}`);
+		logger.warn(`[404] ${req.method}: ${req.originalUrl}`);
 
 		// Send the 404 response
 		res.status(404).json({
