@@ -9,6 +9,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [0.1.2] - 2025-05-19
+
+### Added
+
+- Implemented custom `Winston`-based logging utility with:
+  - Custom log levels: `fatal`, `error`, `warn`, `success`, `info`, `debug`, `verbose`.
+  - Console logging with environment-specific formatting and optional emoji labels
+  - File logging with rotation via `winston-daily-rotate-file`:
+    - Combined logs
+    - Error-only logs
+  - Colorized output in development, clean formatting in production with `chalk`.
+  - Configurable log output paths and retention limits.
+- Added `http-logger` Express middleware using `morgan` and enhanced it with:
+  - Colorized output using `chalk`.
+  - Improved format clarity for both development and production environments.
+
+### Changed
+
+- Refactored logger instantiation to allow better separation between console and file transports.
+- Updated internal logging practices ot use the new logger utility consistently.
+
+### Refactored
+
+- N/A (no refactors in this release)
+
+### Removed
+
+- N/A (no removals in this release)
+
 ## [0.1.1] - 2025-05-13
 
 ### Added
@@ -151,6 +180,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - N/A (no refactors in this release)
 
-[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.2...v0.1.2
 [0.1.1]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/topfrag-gg/codstats-api/releases/tag/v0.1.0
