@@ -17,7 +17,6 @@ import { createErrorHandler } from './middleware/error-handler';
 import { httpLogger } from './middleware/http-logger';
 import { createNotFoundHandler } from './middleware/not-found';
 import { setupRoutes } from './routes/index.routes';
-import { logger } from './utils/logger';
 
 export const createApp = () => {
 	// Create the Express application instance
@@ -31,8 +30,6 @@ export const createApp = () => {
 
 	// Create the global error handler
 	const errorHandler = createErrorHandler({ isProduction });
-
-	logger.info('Is production:', isProduction);
 
 	// Setup Express settings
 	Object.entries(expressSettings).forEach(([key, value]) => {
