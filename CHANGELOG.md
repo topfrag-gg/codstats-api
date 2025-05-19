@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Removed `<!-- @format -->` comments from documentation files.
 - Replaced remaining `console.log` statements with consistent logger utility in middleware files.
 - Updated project structure diagram in `README.md` to include `src/utils` directory.
+- Updated and expanded project badges in `README.md`.
 
 ## [0.1.2] - 2025-05-19
 
