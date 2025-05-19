@@ -5,6 +5,7 @@ import util from 'node:util';
 import chalk from 'chalk';
 import config from 'config';
 import winston, { format } from 'winston';
+import 'winston-daily-rotate-file';
 
 const processID = chalk.yellowBright(process.pid);
 
@@ -58,7 +59,6 @@ winston.addColors(loggerColors);
 const consoleFormat = winston.format.combine(
 	format.splat(),
 	format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-	// format.align(),
 	format.printf(({ timestamp, level, message }) => {
 		const isDev = config.get('env') === 'development';
 		const coloredTimestamp = chalk.grey(timestamp);
@@ -94,9 +94,13 @@ const customLogger = winston.createLogger({
 		}),
 
 		// Combined file transport (logs all levels)
-		new winston.transports.File({
-			filename: './logs/combined.log',
+		new winston.transports.DailyRotateFile({
+			filename: './logs/combined-%DATE%.log',
+			datePattern: 'YYYY-MM-DD',
 			level: 'debug',
+			zippedArchive: true,
+			maxSize: '20m',
+			maxFiles: '14d',
 			format: format.combine(
 				format((info) => {
 					info.level = levelAbbreviations[info.level as LoggerLevel]
@@ -109,15 +113,18 @@ const customLogger = winston.createLogger({
 		}),
 
 		// Error file transport (logs only errors and fatal levels)
-		new winston.transports.File({
-			filename: './logs/error.log',
+		new winston.transports.DailyRotateFile({
+			filename: './logs/error-%DATE%.log',
+			datePattern: 'YYYY-MM-DD',
 			level: 'error',
+			zippedArchive: true,
+			maxSize: '20m',
+			maxFiles: '14d',
 			format: format.combine(
 				format((info) => {
 					info.level = levelAbbreviations[info.level as LoggerLevel]
 						.slice(0, 3)
 						.toUpperCase();
-
 					return info;
 				})(),
 				fileFormat,
