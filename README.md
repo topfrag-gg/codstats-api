@@ -42,6 +42,7 @@ codstats-api/
 ├─ public/                    # Static assets (favicon, etc.)
 ├─ scripts/                   # Custom scripts (build, deployment automation)
 ├─ src/                       # Application source code
+│  ├─ common/                 # Shared types and constants
 │  ├─ libs/                   # Core express setup, CORS, helmet
 │  ├─ middleware/             # API middleware (error, redirect, 404)
 │  ├─ routes/                 # Route handlers (index, health, etc.)
