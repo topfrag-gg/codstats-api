@@ -23,7 +23,8 @@
 		".env.staging.local",
 		"public",
 		"test",
-		"tests"
+		"tests",
+		".tsbuildinfo"
 	],
 	"languageSettings": [
 		{
