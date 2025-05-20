@@ -5,7 +5,9 @@ import config from 'config';
 import cors from 'cors';
 import express, { Express, Request } from 'express';
 import { rateLimit } from 'express-rate-limit';
+import { xss } from 'express-xss-sanitizer';
 import helmet from 'helmet';
+import hpp from 'hpp';
 import favicon from 'serve-favicon';
 import { corsOptions } from './libs/cors';
 import { expressSettings, setupBodyParsers } from './libs/express';
@@ -20,16 +22,12 @@ export const createApp = () => {
 	// Create the Express application instance
 	const app: Express = express();
 
-	// Determine if the environment is production
+	// Create global 404 and error handlers
 	const isProduction = config.get('env') === 'production';
-
-	// Create the global not
 	const notFoundHandler = createNotFoundHandler({ isProduction });
-
-	// Create the global error handler
 	const errorHandler = createErrorHandler({ isProduction });
 
-	// Setup Express settings
+	// Apply Express settings
 	Object.entries(expressSettings).forEach(([key, value]) => {
 		app.set(key, value);
 	});
@@ -53,30 +51,29 @@ export const createApp = () => {
 	});
 	app.use(limiter);
 
-	// Setup Express body parsing middleware
+	// Body parsers
 	setupBodyParsers(app);
 
-	// Log HTTP requests
+	// HTTP request logging
 	app.use(httpLogger);
 
-	// Serve favicon
+	// Favicon and static assets
 	app.use(favicon(path.join(process.cwd(), 'public', 'favicon.ico')));
-
-	// Serve static files
 	app.use(express.static(path.join(process.cwd(), 'public')));
 
-	// Redirect middleware: Handle global redirects to non-API prefixed routes
+	// Input sanitization
+	app.use(xss());
+	app.use(hpp());
+
+	// Global redirect middleware
 	app.use(globalRedirect);
 
-	// Setup routes
+	// App routes
 	setupRoutes(app);
 
-	// 404 middleware: Handle requests to unknown routes
+	// 404 and error handling
 	app.use(notFoundHandler);
-
-	// Global error handling middleware
 	app.use(errorHandler);
 
-	// Return configured Express application instance
 	return app;
 };
