@@ -1,5 +1,3 @@
-/** @format */
-
 import { pathToFileURL } from 'node:url';
 import { resolve as resolveTs } from 'ts-node/esm';
 import * as tsConfigPaths from 'tsconfig-paths';

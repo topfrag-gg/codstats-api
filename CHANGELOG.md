@@ -1,5 +1,3 @@
-<!-- @format -->
-
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -8,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Changed
+
+- Set `insertPragma` option in Prettier config file to `false`.
+- Removed JavaScript `/** @format */` comments from `.js` and `.ts` files.
+- Removed `<!-- @format -->` comments from documentation files.
+- Replaced remaining `console.log` statements with consistent logger utility in middleware files.
+- Updated project structure diagram in `README.md` to include `src/utils` directory.
+- Updated and expanded project badges in `README.md`.
 
 ## [0.1.2] - 2025-05-19
 

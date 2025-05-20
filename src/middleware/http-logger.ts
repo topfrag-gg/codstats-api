@@ -1,5 +1,3 @@
-/** @format */
-
 import process from 'node:process';
 import chalk from 'chalk';
 import config from 'config';

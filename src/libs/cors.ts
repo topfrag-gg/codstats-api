@@ -1,5 +1,3 @@
-/** @format */
-
 import { CorsOptions } from 'cors';
 
 // Allowed origins

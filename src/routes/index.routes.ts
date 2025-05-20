@@ -1,5 +1,3 @@
-/** @format */
-
 import { Application, Router } from 'express';
 import { createHealthRouter } from './health.routes';
 
