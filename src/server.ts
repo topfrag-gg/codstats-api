@@ -10,9 +10,11 @@ export const startServer = (): void => {
 	const host: string = process.env.HOST ?? 'localhost';
 	const port: number = Number(process.env.PORT) || 3000;
 
+	// Initialize and start the server
 	const app = createApp();
 	const server = app.listen(port, host);
 
+	// Handle successful startup
 	server.on('listening', () => {
 		logger.info(`Starting server in ${env} mode`);
 		logger.info(`Server is listening at: ${protocol}://${host}:${port}`);
@@ -20,6 +22,7 @@ export const startServer = (): void => {
 		if (env === 'development') logger.warn('Press CTRL+C to stop the server');
 	});
 
+	// Handle server errors
 	server.on('error', (err: NodeJS.ErrnoException) => {
 		logger.error('Server encountered an error:', err);
 
@@ -32,11 +35,13 @@ export const startServer = (): void => {
 		exit(1);
 	});
 
+	// Handle server close
 	server.on('close', () => {
 		logger.info('Cleaning up resources...');
 		logger.info('Closing remaining connections...');
 	});
 
+	// Graceful shutdown handler
 	const gracefulShutdown = (signal: string): void => {
 		logger.warn(`${signal} signal received`);
 
@@ -46,9 +51,11 @@ export const startServer = (): void => {
 		});
 	};
 
+	// OS signal handlers for graceful shutdown
 	process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
 	process.on('SIGINT', () => gracefulShutdown('SIGINT'));
 
+	// Catch unhandled errors and rejections
 	process.on('uncaughtException', (err) => {
 		logger.error('Uncaught exception:', err);
 		exit(1);
