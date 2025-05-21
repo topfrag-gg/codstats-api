@@ -7,6 +7,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+
+- Installed `express-xss-sanitizer` and `hpp` dependencies for input sanitization and security.
+- Added `src/common/types/` directory to house necessary type declarations for project.
+  - `src/common/types/xss.d.ts`: Type declaration for `xss` dependency.
+- Added high level comments to `src/server.ts` file.
+
+### Changed
+
+- Streamlined comments in the `src/app.ts` file.
+- Expanded ignore list in CSPell config to include `.tsbuildinfo` file.
+- Formatted `package.json` file with Prettier.
+- Updated project structure in `README.md` to include `src/common/` directory.
+
+### Fixed
+
+- N/A
+
+### Refactored
+
+- N/A
+
+### Removed
+
+- N/A
+
 ## [0.1.3] - 2025-05-19
 
 ### Added
