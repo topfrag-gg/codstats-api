@@ -4,14 +4,15 @@
 ![Version](https://img.shields.io/github/v/tag/topfrag-gg/codstats-api?label=version)
 ![Build](https://img.shields.io/github/actions/workflow/status/topfrag-gg/codstats-api/build.yml)
 ![Last Commit](https://img.shields.io/github/last-commit/topfrag-gg/codstats-api?color=blueviolet)
-![Top Language](https://img.shields.io/github/languages/top/topfrag-gg/codstats-api?color=2943d6)
-![Code Size](https://img.shields.io/github/languages/code-size/topfrag-gg/codstats-api?color=red)
-![GitHub repo size](https://img.shields.io/github/repo-size/topfrag-gg/codstats-api?color=yellow)
-![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/topfrag-gg/codstats-api?color=skyblue)
 ![Contributors](https://img.shields.io/github/contributors/topfrag-gg/codstats-api?color=5d00ff)
 ![Open Issues](https://img.shields.io/github/issues/topfrag-gg/codstats-api?color=ff0000)
-![Stars](https://img.shields.io/github/stars/topfrag-gg/codstats-api)
-![GitHub watchers](https://img.shields.io/github/watchers/topfrag-gg/codstats-api)
+
+<!-- ![Top Language](https://img.shields.io/github/languages/top/topfrag-gg/codstats-api?color=2943d6) -->
+<!-- ![Code Size](https://img.shields.io/github/languages/code-size/topfrag-gg/codstats-api?color=red) -->
+<!-- ![GitHub repo size](https://img.shields.io/github/repo-size/topfrag-gg/codstats-api?color=yellow) -->
+<!-- ![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/topfrag-gg/codstats-api?color=skyblue) -->
+<!-- ![Stars](https://img.shields.io/github/stars/topfrag-gg/codstats-api) -->
+<!-- ![GitHub watchers](https://img.shields.io/github/watchers/topfrag-gg/codstats-api) -->
 
 ## Overview
 
