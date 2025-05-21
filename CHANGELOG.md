@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [0.1.4] - 2025-05-21
+
 ### Added
 
 - Installed `express-xss-sanitizer` and `hpp` dependencies for input sanitization and security.
@@ -23,15 +25,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Fixed
 
-- N/A
+- N/A (no fixes in this release)
 
 ### Refactored
 
-- N/A
+- N/A (no refactors in this release)
 
 ### Removed
 
-- N/A
+- N/A (no removals in this release)
 
 ## [0.1.3] - 2025-05-19
 
@@ -227,7 +229,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - N/A (no refactors in this release)
 
-[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.3...HEAD
+[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.4...HEAD
+[0.1.4]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.2...v0.1.2
 [0.1.1]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.0...v0.1.1
