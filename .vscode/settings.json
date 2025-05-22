@@ -39,5 +39,10 @@
 	"javascript.format.placeOpenBraceOnNewLineForFunctions": false,
 	"[package.json]": {
 		"editor.wordWrap": "off"
+	},
+	"[prisma]": {
+		"editor.defaultFormatter": "Prisma.prisma",
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
 	}
 }
