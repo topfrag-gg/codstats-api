@@ -4,3 +4,8 @@ flyctl
 flydotio
 sonarjs
 ianvs
+Dockerized
+pgadmin
+PGADMIN
+psql
+dpage
