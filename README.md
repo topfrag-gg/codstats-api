@@ -270,6 +270,7 @@ codstats-api/
 ├─ .husky/                    # Husky hooks for Git (e.g., pre-commit, pre-push)
 ├─ .vscode/                   # VSCode settings (extensions, workspace configs)
 ├─ config/                    # Environment-specific configurations (default, production)
+├─ generated/                 # Auto-generated files (e.g., Prisma client, OpenAPI types)
 ├─ prisma/                    # Prisma schema, migrations, and seed scripts
 ├─ public/                    # Static assets (favicon, etc.)
 ├─ scripts/                   # Custom scripts (build, deployment automation)
@@ -303,7 +304,7 @@ codstats-api/
 ├─ package.json               # Project metadata, scripts, and dependency definitions
 ├─ README.md                  # Project overview, setup instructions, and documentation
 ├─ tsconfig.json              # TypeScript
-└─ tsconfig.lint.json         # Extended TS config for type-checking during linting (used by ESLint)
+└─ tsconfig.lint.json         # TypeScript config used for linting (ESLint scope)
 ```
 
 ## Database Schema
