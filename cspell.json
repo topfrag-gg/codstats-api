@@ -24,7 +24,9 @@
 		"public",
 		"test",
 		"tests",
-		".tsbuildinfo"
+		".tsbuildinfo",
+		"generated",
+		"prisma/migrations"
 	],
 	"languageSettings": [
 		{
