@@ -18,6 +18,8 @@
 		"baseUrl": "./",
 		"paths": {
 			"@/*": ["./*"],
+			"@/generated": ["./generated/*"],
+			"@/prisma": ["./prisma/*"],
 			"@/src/*": ["./src/*"]
 		},
 		"typeRoots": ["./node_modules/@types/"],
@@ -78,6 +80,6 @@
 			"outputCheck": ["js", "json", "cjs", "mjs"]
 		}
 	},
-	"include": ["index.ts", "src/**/*"],
+	"include": ["index.ts", "src/**/*", "prisma/**/*"],
 	"exclude": ["node_modules", "dist"]
 }
