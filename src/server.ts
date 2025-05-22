@@ -1,6 +1,7 @@
 import { exit } from 'node:process';
 import config from 'config';
 import { createApp } from './app';
+import { connectToDatabase } from './prisma';
 import { logger } from './utils/logger';
 
 export const startServer = (): void => {
@@ -20,6 +21,8 @@ export const startServer = (): void => {
 		logger.info(`Server is listening at: ${protocol}://${host}:${port}`);
 
 		if (env === 'development') logger.warn('Press CTRL+C to stop the server');
+
+		connectToDatabase();
 	});
 
 	// Handle server errors
