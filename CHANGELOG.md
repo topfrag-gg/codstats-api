@@ -38,6 +38,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - `cspell.json`: Added the `prisma/generations`, and `generated/` directories to the ignore list for CSpell.
 - `tsconfig.json`: Added `prisma` to the `included` section of the TypeScript config file.
 - Expanded paths and module import aliases in the `tsconfig.json` and `eslint.config.js` files.
+- Add `generated/` to `.prettierignore` to prevent formatting on generated Prisma files.
 
 ### Refactors
 
@@ -56,11 +57,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Added initial database setup instructions using Docker Compose in the `README.md` file.
 - Documented Prisma schema decisions and match format assumptions (`docs/schema.md`).
 - Updated the project structure diagram in the `README.md` file to reflect the addition of the following directories and
-  files:
-  - `tsconfig.lint.json`
-  - `prisma/`,
-  - `generated/`
-  - `docker-compose.yml`
+  files: `tsconfig.lint.json`, `prisma/`, `generated/`, `docker-compose.yml`.
 
 ## [0.1.4] - 2025-05-21
 
