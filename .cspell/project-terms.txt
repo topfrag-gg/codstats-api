@@ -19,3 +19,8 @@ frameguard
 hsts
 formdata
 cpus
+Hardpoint
+healthcheck
+isready
+autoincrement
+gamertag

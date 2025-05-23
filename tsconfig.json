@@ -18,7 +18,13 @@
 		"baseUrl": "./",
 		"paths": {
 			"@/*": ["./*"],
-			"@/src/*": ["./src/*"]
+			"@prisma/generated/*": ["./generated/prisma/*"],
+			"@src/*": ["./src/*"],
+			"@common/*": ["./src/common/*"],
+			"@libs/*": ["./src/libs/*"],
+			"@middleware/*": ["./src/middleware/*"],
+			"@routes/*": ["./src/routes/*"],
+			"@utils/*": ["./src/utils/*"]
 		},
 		"typeRoots": ["./node_modules/@types/"],
 		"noUncheckedSideEffectImports": true,
@@ -78,6 +84,6 @@
 			"outputCheck": ["js", "json", "cjs", "mjs"]
 		}
 	},
-	"include": ["index.ts", "src/**/*"],
+	"include": ["index.ts", "src/**/*", "prisma/**/*"],
 	"exclude": ["node_modules", "dist"]
 }

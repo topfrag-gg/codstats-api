@@ -16,4 +16,5 @@ export default {
 	port: Number(process.env.PORT) || 3000,
 	name: pjson.name || 'CODStats API',
 	version: pjson.version,
+	database_url: process.env.DATABASE_URL,
 };

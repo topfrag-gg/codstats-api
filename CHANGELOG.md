@@ -7,6 +7,58 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+
+- Initial Prisma schema (`prisma/schema.prisma`) defining core data models:
+  - `User` and `Profile` for authentication and user details.
+  - `Player`, `Team`, `Match`, `Event`, `Stat`, and `Leaderboard` for Call of Duty esports structure.
+  - `Map`, `GameMode`, and `MatchMap` to support map/game mode relationships and best-of-five match series.
+- Added database seeding file `prisma/seed.ts`.
+- Prisma formatting configuration to `.vscode/settings.json`:
+  - Set `"editor.defaultFormatter": "Prisma.prisma"` for `.prisma` files.
+  - Enabled format on save and paste for Prisma files.
+- Configured Docker for the local PostgreSQL development database in the `docker-compose.yml` file.
+- Added a database seeding script in `package.json`.
+- Added `tsconfig.lint.json`, extending the `tsconfig.json` file for type-checking during linting (used by ESLint).
+- Added new NPM scripts to `package.json` for database, typecheck, and Docker workflow:
+  - `db:migrate`: Run Prisma migrations (`prisma migrate deploy`)
+  - `db:generate`: Generate Prisma Client (`prisma generate`)
+  - `db:seed`: Seed the database with sample data (`tsx prisma/seed.ts`)
+  - `db:setup`: Run migration, generate client, and seed in one command
+  - `dev:db`: Start Docker Compose services (e.g., Postgres) in detached mode
+  - `dev:db:down`: Stop and remove Docker Compose services
+  - `typecheck`: Run the `tsconfig.lint.json` file to typecheck the codebase.
+  - `validate`: Runs the `lint` and `typecheck` scripts together.
+- Configured API-wide Prisma client in `src/prisma.ts`.
+
+### Changed
+
+- Added `database_url` configuration in the `config/default.js` and `config/production.js` files.
+- Expanded custom CSPell dictionaries with project and dependency terms (Prisma and Docker).
+- `cspell.json`: Added the `prisma/generations`, and `generated/` directories to the ignore list for CSpell.
+- `tsconfig.json`: Added `prisma` to the `included` section of the TypeScript config file.
+- Expanded paths and module import aliases in the `tsconfig.json` and `eslint.config.js` files.
+- Add `generated/` to `.prettierignore` to prevent formatting on generated Prisma files.
+
+### Refactors
+
+- N/A (no refactors in this release)
+
+### Fixed
+
+- N/A (no fixes in this release)
+
+### Removed
+
+- N/A (no removals in this release)
+
+### Docs
+
+- Added initial database setup instructions using Docker Compose in the `README.md` file.
+- Documented Prisma schema decisions and match format assumptions (`docs/schema.md`).
+- Updated the project structure diagram in the `README.md` file to reflect the addition of the following directories and
+  files: `tsconfig.lint.json`, `prisma/`, `generated/`, `docker-compose.yml`.
+
 ## [0.1.4] - 2025-05-21
 
 ### Added
@@ -64,7 +116,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Implemented custom `Winston`-based logging utility with:
   - Custom log levels: `fatal`, `error`, `warn`, `success`, `info`, `debug`, `verbose`.
-  - Console logging with environment-specific formatting and optional emoji labels
+  - Console logging with environment-specific formatting and optional emoji labels.
   - File logging with rotation via `winston-daily-rotate-file`:
     - Combined logs
     - Error-only logs
