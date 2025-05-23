@@ -1,4 +1,6 @@
-# CODStats API
+<style>h1 { border-bottom: 0; }</style>
+
+# ![header image](./header.svg)
 
 ![License](https://img.shields.io/github/license/topfrag-gg/codstats-api?color=blue)
 ![Version](https://img.shields.io/github/v/tag/topfrag-gg/codstats-api?label=version)
