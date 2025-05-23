@@ -58,9 +58,35 @@ export default defineConfig([
 				alias: {
 					map: [
 						['@', '.'],
-						['@/src', './src'],
+						['@prisma/generated', './generated/prisma'],
+						['@src', './src'],
+						['@prisma/generated', './generated/prisma'],
+						['@common', './src/common'],
+						['@libs', './src/libs'],
+						['@middleware', './src/middleware'],
+						['@routes', './src/routes'],
+						['@utils', './src/utils'],
 					],
 					extensions: ['.js', '.cjs', '.mjs', '.ts', '.tsx', '.json'],
+				},
+			},
+		},
+	},
+
+	{
+		files: ['**/*.ts'],
+		rules: {
+			'import/no-unresolved': 'off',
+			'import/no-named-as-default-member': 'off',
+		},
+		settings: {
+			'import/parsers': {
+				'@typescript-eslint/parser': ['.ts'],
+			},
+			'import/resolver': {
+				typescript: {
+					alwaysTryTypes: true,
+					project: './tsconfig.json',
 				},
 			},
 		},
