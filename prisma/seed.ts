@@ -1,6 +1,6 @@
 import console from 'node:console';
 import { exit } from 'node:process';
-import { PrismaClient } from '../generated/prisma';
+import { PrismaClient } from '@prisma/generated/client';
 
 type PlayerRole = 'ENTRY_SMG' | 'ROAMING_SMG' | 'MAIN_AR' | 'FLEX';
 
@@ -37,6 +37,8 @@ const main = async () => {
 		],
 		skipDuplicates: true,
 	});
+
+	console.log(`${maps.count} maps created`);
 
 	const allMaps = await prisma.map.findMany();
 
