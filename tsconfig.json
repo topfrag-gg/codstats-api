@@ -18,9 +18,13 @@
 		"baseUrl": "./",
 		"paths": {
 			"@/*": ["./*"],
-			"@/generated": ["./generated/*"],
-			"@/prisma": ["./prisma/*"],
-			"@/src/*": ["./src/*"]
+			"@prisma/generated/*": ["./generated/prisma/*"],
+			"@src/*": ["./src/*"],
+			"@common/*": ["./src/common/*"],
+			"@libs/*": ["./src/libs/*"],
+			"@middleware/*": ["./src/middleware/*"],
+			"@routes/*": ["./src/routes/*"],
+			"@utils/*": ["./src/utils/*"]
 		},
 		"typeRoots": ["./node_modules/@types/"],
 		"noUncheckedSideEffectImports": true,
