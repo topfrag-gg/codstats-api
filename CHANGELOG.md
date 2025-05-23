@@ -37,6 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Expanded custom CSPell dictionaries with project and dependency terms (Prisma and Docker).
 - `cspell.json`: Added the `prisma/generations`, and `generated/` directories to the ignore list for CSpell.
 - `tsconfig.json`: Added `prisma` to the `included` section of the TypeScript config file.
+- Expanded paths and module import aliases in the `tsconfig.json` and `eslint.config.js` files.
 
 ### Refactors
 
