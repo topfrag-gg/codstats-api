@@ -1,6 +1,6 @@
-<style>h1 { border-bottom: 0; }</style>
+#
 
-# ![header image](./header.svg)
+<img src="./header.svg" alt="header image"/>
 
 ![License](https://img.shields.io/github/license/topfrag-gg/codstats-api?color=blue)
 ![Version](https://img.shields.io/github/v/tag/topfrag-gg/codstats-api?label=version)
@@ -93,6 +93,7 @@ The following will be printed in your terminal indicating that the API has start
 > cross-env NODE_ENV=development nodemon
 
 [nodemon] 3.1.9
+
 [nodemon] to restart at any time, enter `rs`
 [nodemon] watching path(s): index.ts config\**\* src\**\* scripts\**\*
 [nodemon] watching extensions: ts,js,json
@@ -245,9 +246,11 @@ To prevent conflicts, **you must stop the locally running PostgreSQL service** b
 
 #### 🪟 How to Stop PostgreSQL on Windows
 
-1. Press `Windows + R` to open the Run dialog box.
-2. Type `services.msc` and hit Enter.
-3. In the Services window, scroll down and look for a service named something like:
+##### 1. Press `Windows + R` to open the Run dialog box
+
+##### 2. Type `services.msc` and hit Enter
+
+##### 3. In the Services window, scroll down and look for a service named something like
 
 ```arduino
 postgresql-x64-14 - PostgreSQL Server 14
@@ -255,7 +258,7 @@ postgresql-x64-14 - PostgreSQL Server 14
 
 > The name may vary depending on your version or system architecture.
 
-4. Right-click on the service and select "**Stop**".
+##### 4. Right-click on the service and select "**Stop**"
 
 This will free up port `5432` and ensure your **Docker-based PostgreSQL instance starts and works correctly.**
 
