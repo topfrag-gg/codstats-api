@@ -38,7 +38,7 @@ export default defineConfig([
 			'coverage',
 			'.husky',
 			'.vscode',
-			'generated',
+			'generated/**',
 		],
 	},
 
