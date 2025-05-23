@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [0.2.0] - 2025-05-22
+
 ### Added
 
 - Initial Prisma schema (`prisma/schema.prisma`) defining core data models:
@@ -281,7 +283,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - N/A (no refactors in this release)
 
-[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.4...HEAD
+[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.4...v0.2.0
 [0.1.4]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.2...v0.1.2
