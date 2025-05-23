@@ -31,7 +31,15 @@ const __dirname = path.dirname(__filename);
 export default defineConfig([
 	// Ignore node_modules and dist directories
 	{
-		ignores: ['node_modules', 'dist', 'logs', 'coverage', '.husky', '.vscode'],
+		ignores: [
+			'node_modules',
+			'dist',
+			'logs',
+			'coverage',
+			'.husky',
+			'.vscode',
+			'generated',
+		],
 	},
 
 	// Shared settings
