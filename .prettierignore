@@ -144,6 +144,9 @@ plop-templates/*.hbs
 # Prettier config file
 .prettierrc
 
+# Prisma Generated
+generated
+
 # Project root lockfile
 package-lock.json
 yarn.lock
