@@ -7,6 +7,41 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+
+- Integrated `eslint-plugin-boundaries` to enforce module boundaries and maintain a scalable codebase structure.
+  - Defined architectural boundaries
+  - Prevented cross-feature imports within `src/features/*` unless exposed via an `index.ts` public API.
+  - Allowed controlled access between layers, e.g., routes can import from features, but features can't import from
+    routes.
+
+### Changed
+
+- Updated import order configuration in Prettier configuration file.
+- Updated ESLint config file with boundaries plugin configuration, and enforce module imports with alias paths.
+  - Reorganized ESLint flat config to handle ESM files more effectively
+  - Added comprehensive parser options for modern JavaScript features
+
+### Fixed
+
+- Fixed ESLint no-undef error for `NodeJS.ErrnoException` in `server.ts` by updating ESLint config:
+  - Explicitly defined NodeJS as a global in languageOptions.globals
+  - Ensured `tsconfig.json` includes `"types": ["node"]` under compilerOptions to provide correct type definitions for
+    Node.js environments.
+- Resolved `import/namespace` errors in `scripts/loader.js`:
+
+### Refactored
+
+- Replaced standard imports with `import type` for type-only imports across the codebase.
+
+### Removed
+
+- N/A
+
+### Documentation
+
+- Replaced main header with project image, fixed headings and lint warnings in `README.md`.
+
 ## [0.2.0] - 2025-05-22
 
 ### Added
