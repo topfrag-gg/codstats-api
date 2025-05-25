@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import { logger } from '../utils/logger';
+import type { Request, Response } from 'express';
+import { logger } from '@utils/logger';
 
 interface CustomError extends Error {
 	status?: number;
@@ -10,22 +10,8 @@ type ErrorHandlerDeps = {
 	isProduction: boolean;
 };
 
-type ErrorHandler = (
-	err: CustomError | Error,
-	_req: Request,
-	res: Response,
-) => void;
-
-/**
- * This middleware handles errors that occur during the request lifecycle.
- * @param {CustomError | Error} err - The error object
- * @param {boolean} err.isProduction - Indicates if the application is running in production mode.
- * @returns { void } - This function does not return any value.
- */
-export const createErrorHandler = ({
-	isProduction,
-}: ErrorHandlerDeps): ErrorHandler => {
-	return (err: CustomError | Error, _req: Request, res: Response): void => {
+export const createErrorHandler = ({ isProduction }: ErrorHandlerDeps) => {
+	return (err: CustomError | Error, _req: Request, res: Response) => {
 		// Ensure the error is an instance of Error
 		if (!(err instanceof Error)) {
 			err = new Error('An unexpected error occurred');

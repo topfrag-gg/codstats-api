@@ -1,25 +1,14 @@
-import { NextFunction, Request, Response } from 'express';
+import type { NextFunction, Request, Response } from 'express';
 import createError from 'http-errors';
-import { logger } from '../utils/logger';
+import { logger } from '@utils/logger';
 
 type NotFoundHandlerDeps = {
 	isProduction: boolean;
 };
 
-type NotFoundHandler = (
-	req: Request,
-	res: Response,
-	next: NextFunction,
-) => void;
-
-/**
- * This middleware handles 404 Not Found errors for the application.
- * @param {boolean} isProduction - Indicates if the application is running in production mode.
- * @returns {NotFoundHandler} - A middleware function that handles 404 errors.
- */
 export const createNotFoundHandler = ({
 	isProduction,
-}: NotFoundHandlerDeps): NotFoundHandler => {
+}: NotFoundHandlerDeps) => {
 	return (req: Request, res: Response, next: NextFunction): void => {
 		// Prepare error message
 		const errorMessage = `The requested resource '${req.originalUrl}' was not found`;
