@@ -1,5 +1,6 @@
-import { Application, Router } from 'express';
-import { createHealthRouter } from './health.routes';
+import type { Application } from 'express';
+import { Router } from 'express';
+import { createHealthRouter } from '@routes/health.routes';
 
 export const setupRoutes = (app: Application): void => {
 	const router = Router();
