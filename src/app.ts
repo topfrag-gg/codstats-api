@@ -1,22 +1,23 @@
 import path from 'node:path';
 import process from 'node:process';
+import type { Express, Request } from 'express';
 import compression from 'compression';
 import config from 'config';
 import cors from 'cors';
-import express, { Express, Request } from 'express';
+import express from 'express';
 import { rateLimit } from 'express-rate-limit';
 import { xss } from 'express-xss-sanitizer';
 import helmet from 'helmet';
 import hpp from 'hpp';
 import favicon from 'serve-favicon';
-import { corsOptions } from './libs/cors';
-import { expressSettings, setupBodyParsers } from './libs/express';
-import { helmetOptions } from './libs/helmet';
-import { globalRedirect } from './middleware/api-redirect';
-import { createErrorHandler } from './middleware/error-handler';
-import { httpLogger } from './middleware/http-logger';
-import { createNotFoundHandler } from './middleware/not-found';
-import { setupRoutes } from './routes/index.routes';
+import { corsOptions } from '@libs/cors';
+import { expressSettings, setupBodyParsers } from '@libs/express';
+import { helmetOptions } from '@libs/helmet';
+import { globalRedirect } from '@middleware/api-redirect';
+import { createErrorHandler } from '@middleware/error-handler';
+import { httpLogger } from '@middleware/http-logger';
+import { createNotFoundHandler } from '@middleware/not-found';
+import { setupRoutes } from '@routes/index.routes';
 
 export const createApp = () => {
 	// Create the Express application instance
