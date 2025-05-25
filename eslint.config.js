@@ -1,17 +1,13 @@
 /**
  * ESLint configuration using flat config format. Docs:
  * https://eslint.org/docs/latest/use/getting-started
- * @format
  */
 
 import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
-import css from '@eslint/css';
-import js from '@eslint/js';
-import json from '@eslint/json';
-import markdown from '@eslint/markdown';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
+import boundaries from 'eslint-plugin-boundaries';
 import importPlugin from 'eslint-plugin-import';
 import jsdoc from 'eslint-plugin-jsdoc';
 import nodePlugin from 'eslint-plugin-n';
@@ -24,6 +20,10 @@ import unusedImports from 'eslint-plugin-unused-imports';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
+import css from '@eslint/css';
+import js from '@eslint/js';
+import json from '@eslint/json';
+import markdown from '@eslint/markdown';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -39,12 +39,26 @@ export default defineConfig([
 			'.husky',
 			'.vscode',
 			'generated/**',
+			'**/*.d.ts',
+			'**/*.generated.ts',
 		],
+	},
+
+	// Add ESM support configuration
+	{
+		files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+		languageOptions: {
+			parserOptions: {
+				ecmaVersion: 'latest',
+				sourceType: 'module',
+			},
+		},
 	},
 
 	// Shared settings
 	{
 		settings: {
+			// Import resolution (TypeScript, Node, aliases)
 			'import/resolver': {
 				typescript: {
 					alwaysTryTypes: true,
@@ -60,7 +74,6 @@ export default defineConfig([
 						['@', '.'],
 						['@prisma/generated', './generated/prisma'],
 						['@src', './src'],
-						['@prisma/generated', './generated/prisma'],
 						['@common', './src/common'],
 						['@libs', './src/libs'],
 						['@middleware', './src/middleware'],
@@ -78,6 +91,7 @@ export default defineConfig([
 		rules: {
 			'import/no-unresolved': 'off',
 			'import/no-named-as-default-member': 'off',
+			'no-undef': 'off',
 		},
 		settings: {
 			'import/parsers': {
@@ -230,6 +244,7 @@ export default defineConfig([
 				...globals.node,
 				...globals.es2020,
 				...globals.nodeBuiltin,
+				NodeJS: 'readonly',
 			},
 		},
 		rules: {
@@ -238,11 +253,39 @@ export default defineConfig([
 			'n/no-unpublished-require': 'error',
 			'n/exports-style': ['error', 'exports'],
 			'n/no-missing-import': ['error', { tryExtensions: ['.js', '.ts'] }],
+			// Enforce @ aliases
+			'no-restricted-imports': [
+				'error',
+				{
+					patterns: [
+						{
+							group: ['src/*', '../src/*', './src/*'],
+							message:
+								'Use @ alias imports for src files (e.g., @utils/logger)',
+						},
+						{
+							group: ['utils/*', '../utils/*', './utils/*'],
+							message: 'Use @utils alias instead (e.g., @utils/logger)',
+						},
+						{
+							group: ['middleware/*', '../middleware/*', './middleware/*'],
+							message: 'Use @utils alias instead (e.g., @utils/logger)',
+						},
+						{
+							group: ['libs/*', '../libs/*', './libs/*'],
+							message: 'Use @utils alias instead (e.g., @utils/logger)',
+						},
+						{
+							group: ['routes/*', '../routes/*', './routes/*'],
+							message: 'Use @utils alias instead (e.g., @utils/logger)',
+						},
+					],
+				},
+			],
 		},
 	},
 
-	// TypeScript-specific rules
-	tseslint.configs.recommended,
+	// TypeScript-specific rules (optimized)
 	{
 		files: ['**/*.ts'],
 		languageOptions: {
@@ -250,12 +293,76 @@ export default defineConfig([
 			parserOptions: {
 				project: './tsconfig.json',
 				tsconfigRootDir: process.cwd(),
+				warnOnUnsupportedTypeScriptVersion: true,
 			},
 		},
-		plugins: { '@typescript-eslint': tseslint.plugin },
+		plugins: {
+			'@typescript-eslint': tseslint.plugin,
+		},
 		rules: {
 			...tseslint.configs.recommended.rules,
-			'@typescript-eslint/no-unused-vars': 'warn',
+			...tseslint.configs.strict.rules,
+			'@typescript-eslint/no-unused-vars': [
+				'warn',
+				{ argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+			],
+			'@typescript-eslint/consistent-type-imports': 'error',
+			'@typescript-eslint/no-floating-promises': 'error',
+			'@typescript-eslint/await-thenable': 'error',
+			'@typescript-eslint/no-misused-promises': 'error',
+			'@typescript-eslint/no-undef': 'off',
+		},
+	},
+
+	// TypeScript test files
+	{
+		files: ['**/*.test.ts'],
+		rules: {
+			'@typescript-eslint/no-unsafe-assignment': 'off',
+			'@typescript-eslint/no-non-null-assertion': 'off',
+			'@typescript-eslint/no-explicit-any': 'off',
+		},
+	},
+
+	// Plugin boundaries
+	{
+		files: ['**/*.ts'],
+		plugins: { boundaries },
+		settings: {
+			'boundaries/elements': [
+				{ type: 'config', pattern: 'src/config' },
+				{ type: 'utils', pattern: 'src/utils' },
+				{ type: 'libs', pattern: 'src/libs' },
+				{ type: 'types', pattern: 'src/common/types' },
+				{ type: 'middleware', pattern: 'src/middlewares' },
+				{ type: 'routes', pattern: 'src/routes' },
+				{ type: 'feature', pattern: 'src/features/[^/]+', mode: 'folder' },
+			],
+		},
+		rules: {
+			'boundaries/element-types': [
+				'error',
+				{
+					default: 'disallow',
+					rules: [
+						{
+							from: 'feature',
+							allow: ['libs', 'types', 'config', 'middleware'],
+						},
+						{ from: 'routes', allow: ['feature', 'libs', 'types'] },
+						{ from: 'middleware', allow: ['libs', 'types', 'config'] },
+						{ from: 'libs', allow: ['libs', 'types'] },
+						{ from: 'config', allow: ['libs'] },
+					],
+				},
+			],
+			'boundaries/no-private': [
+				'error',
+				{
+					allowUncles: false,
+				},
+			],
+			'boundaries/entry-point': 'off',
 		},
 	},
 
