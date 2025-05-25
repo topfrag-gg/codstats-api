@@ -13,6 +13,7 @@
 
 		/* Modules */
 		"module": "ESNext",
+		"types": ["node"],
 		"rootDir": "./",
 		"moduleResolution": "Node",
 		"baseUrl": "./",
