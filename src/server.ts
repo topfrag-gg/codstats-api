@@ -1,8 +1,8 @@
 import { exit } from 'node:process';
 import config from 'config';
-import { createApp } from './app';
-import { connectToDatabase } from './prisma';
-import { logger } from './utils/logger';
+import { createApp } from '@src/app';
+import { connectToDatabase } from '@src/prisma';
+import { logger } from '@utils/logger';
 
 export const startServer = (): void => {
 	// Load the server configuration variables
@@ -22,7 +22,9 @@ export const startServer = (): void => {
 
 		if (env === 'development') logger.warn('Press CTRL+C to stop the server');
 
-		connectToDatabase();
+		connectToDatabase().catch((err) => {
+			logger.error('Error connecting to database: ', err);
+		});
 	});
 
 	// Handle server errors

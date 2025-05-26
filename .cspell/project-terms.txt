@@ -24,3 +24,4 @@ healthcheck
 isready
 autoincrement
 gamertag
+Errno

@@ -1,4 +1,4 @@
-import { CorsOptions } from 'cors';
+import type { CorsOptions } from 'cors';
 
 // Allowed origins
 const whitelist = ['http://localhost:8080'];

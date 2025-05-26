@@ -131,6 +131,7 @@ const customLogger = winston.createLogger({
 	],
 });
 
+// eslint-disable-next-line no-unused-vars
 type Logger = Record<LoggerLevel, (...args: unknown[]) => void>;
 
 // export const logger: Logger = (Object.keys(loggerLevels) as LoggerLevel[])

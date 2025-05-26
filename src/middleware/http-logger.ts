@@ -1,8 +1,8 @@
 import process from 'node:process';
+import type { Request, Response } from 'express';
 import chalk from 'chalk';
 import config from 'config';
 import { format } from 'date-fns';
-import { Request, Response } from 'express';
 import morgan from 'morgan';
 import prettyMs from 'pretty-ms';
 

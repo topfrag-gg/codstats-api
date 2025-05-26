@@ -1,5 +1,6 @@
+import type { Application } from 'express';
 import config from 'config';
-import express, { Application } from 'express';
+import express from 'express';
 
 export const expressSettings = {
 	// Basic settings
