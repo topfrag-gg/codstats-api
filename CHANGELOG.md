@@ -7,6 +7,44 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+
+- N/A
+
+### Changed
+
+- Updated `generator client` block in `prisma/schema.prisma` to:
+
+  ```prisma
+  generator client {
+    provider = "prisma-client-js"
+    output   = "./node_modules/.prisma/client"
+  }
+  ```
+
+- Updated `src/prisma.ts` and `prisma/seed.ts` to import the Prisma Client from the default location:
+
+  ```ts
+  import { PrismaClient } from '@prisma/client';
+  ```
+
+### Fixed
+
+- Fixed production build error caused by a custom Prisma output path and non-standard import.
+- Prisma Client now correctly initializes in both development and production environments.
+
+### Refactored
+
+- N/A
+
+### Removed
+
+- Removed the custom `generated/` folder from the project root.
+
+### Documentation
+
+- N/A
+
 ## [0.2.1] - 2025-05-25
 
 ### Added

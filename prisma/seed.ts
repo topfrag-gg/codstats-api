@@ -1,6 +1,6 @@
 import console from 'node:console';
 import { exit } from 'node:process';
-import { PrismaClient } from '@prisma/generated/client';
+import { PrismaClient } from '@prisma/client';
 
 type PlayerRole = 'ENTRY_SMG' | 'ROAMING_SMG' | 'MAIN_AR' | 'FLEX';
 

@@ -1,5 +1,6 @@
 import config from 'config';
-import { PrismaClient } from '@prisma/generated/client';
+// import { PrismaClient } from '@prisma/generated/client';
+import { PrismaClient } from '@prisma/client';
 import { logger } from '@utils/logger';
 
 const DATABASE_URL =
