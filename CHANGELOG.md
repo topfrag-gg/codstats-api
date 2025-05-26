@@ -7,9 +7,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [0.2.2] - 2025-05-25
+
 ### Added
 
-- N/A
+- N/A (no additions in this release)
 
 ### Changed
 
@@ -35,7 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Refactored
 
-- N/A
+- N/A (no refactors in this release)
 
 ### Removed
 
@@ -43,7 +45,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Documentation
 
-- N/A
+- Fixed version [0.2.1] release link in this `CHANGELOG.md` file.
 
 ## [0.2.1] - 2025-05-25
 
@@ -358,8 +360,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - N/A (no refactors in this release)
 
-[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/v0.2.1...HEAD
-[0.2.1]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.4...v0.2.1
+[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/v0.2.2...HEAD
+[0.2.2]: https://github.com/topfrag-gg/codstats-api/compare/v0.2.1...v0.2.2
+[0.2.1]: https://github.com/topfrag-gg/codstats-api/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.4...v0.2.0
 [0.1.4]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.2...v0.1.3
