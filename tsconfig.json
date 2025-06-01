@@ -36,6 +36,8 @@
 
 		/* Emit */
 		"sourceMap": true,
+		"inlineSourceMap": false,
+		"inlineSources": false,
 		"noEmit": false,
 		"outDir": "dist",
 		"removeComments": true,
@@ -85,6 +87,6 @@
 			"outputCheck": ["js", "json", "cjs", "mjs"]
 		}
 	},
-	"include": ["index.ts", "src/**/*", "prisma/**/*"],
+	"include": ["index.ts", "src/**/*", "prisma/**/*", "scripts/**/*"],
 	"exclude": ["node_modules", "dist"]
 }
