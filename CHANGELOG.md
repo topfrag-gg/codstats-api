@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [0.3.0] - 2025-05-31
+
 ### Added
 
 - Release script to run Prisma migrations on deployment (`scripts/release.ts`).
@@ -78,11 +80,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Fixed
 
-- N/A
+- N/A (no fixes in this release)
 
 ### Refactored
 
-- N/A
+- N/A (no refactors in this release)
 
 ### Removed
 
@@ -447,7 +449,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - N/A (no refactors in this release)
 
-[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/v0.2.2...HEAD
+[Unreleased]: https://github.com/topfrag-gg/codstats-api/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/topfrag-gg/codstats-api/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/topfrag-gg/codstats-api/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/topfrag-gg/codstats-api/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/topfrag-gg/codstats-api/compare/v0.1.4...v0.2.0
