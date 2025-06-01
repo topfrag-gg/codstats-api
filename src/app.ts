@@ -49,6 +49,10 @@ export const createApp = () => {
 		max: 10,
 		standardHeaders: 'draft-8',
 		legacyHeaders: false,
+		// Allow Consul health checks through without rate limiting because:
+		// 1. They're essential for cluster orchestration
+		// 2. Consul agents authenticate via TLS client certs
+		// 3. Health endpoint performs no expensive operations
 		skip: (req) => {
 			return (
 					req.path === '/api/v1/health/ready'
