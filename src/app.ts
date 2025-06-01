@@ -45,10 +45,18 @@ export const createApp = () => {
 
 	// General rate limiter
 	const limiter = rateLimit({
-		windowMs: 15 * 60 * 1000, // 15 minute window
-		max: 10, // Limit each IP to 10 requests per window
-		standardHeaders: 'draft-8', // Use standardized rate limit headers
-		legacyHeaders: false, // Disable legacy rate limit headers
+		windowMs: 15 * 60 * 1000,
+		max: 10,
+		standardHeaders: 'draft-8',
+		legacyHeaders: false,
+		skip: (req) => {
+			return (
+					req.path === '/api/v1/health/ready'
+						&& !!req.get('user-agent')?.includes('Consul Health Check')
+				) ?
+					true
+				:	false;
+		},
 	});
 	app.use(limiter);
 
