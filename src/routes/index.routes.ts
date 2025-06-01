@@ -1,6 +1,7 @@
 import type { Application } from 'express';
+import config from 'config';
 import { Router } from 'express';
-import { createHealthRouter } from '@routes/health.routes';
+import { createHealthRouter } from '@src/api/health/routes';
 
 export const setupRoutes = (app: Application): void => {
 	const router = Router();
@@ -13,7 +14,13 @@ export const setupRoutes = (app: Application): void => {
 
 	// Root routes
 	router.get('/', (_req, res) => {
-		res.send('Hello WOrld');
+		res.status(200).json({
+			service: config.get('name'),
+			version: config.get('version'),
+			links: {
+				documentation: 'https://github.com/topfrag-gg/codstats-api#readme',
+			},
+		});
 	});
 	router.use('/health', healthRouter);
 

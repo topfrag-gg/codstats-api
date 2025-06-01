@@ -7,6 +7,93 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Added
+
+- Release script to run Prisma migrations on deployment (`scripts/release.ts`).
+- **Fly.io Deployment:**
+  - Configured `release_command` in `fly.toml` to automatically run database migrations via `release.ts` during deploys.
+  - Ensures schema changes are applied before new version becomes active
+- **Docker Configuration:**
+
+  - Added OpenSSL installation to work with Prisma on Fly.io
+  - Integrated Prisma Client generation in build process:
+
+  ```Docker
+  COPY --link prisma .
+  RUN npx prisma generate
+  ```
+
+- Added `health` module to manage the liveness and readiness endpoints (`src/api/health`)
+- **Production Build Optimization:**
+
+  - Added `tsconfig.prod.json` for Fly.io deployments:
+    - Disables sourcemaps
+    - Enables production-optimized compilation
+  - New `build:prod` script in `package.json` for Docker builds:
+
+    ```bash
+    tsc -p tsconfig.prod.json && tsc-alias -p tsconfig.prod.json
+    ```
+
+### Changed
+
+- Moved `prisma` from `dependencies` to `devDependencies` (now only required during development/build).
+  - Note: Runtime still requires `@prisma/client`
+- Added `[deploy]` block in `fly.toml` to run release command for Prisma.
+- **Build Process:** Enhancements made to the `build` script
+  - Added pre-build cleanup of stale artifacts:
+    - Automatic removal of `.tsbuildinfo` file before compilation
+    - Deletion of existing `dist` folder to ensure fresh builds
+  - Maintained existing TypeScript compilation and alias resolution logic
+- Added `scripts/` folder to the `included` section of the `tsconfig.json` file.
+- Standardized health endpoints:
+  - `/health/live` (was `/health/liveness`)
+  - `/health/ready` (was `/health/readiness`)
+- **Docker Configuration:**
+  - Updated Dockerfile to use `build:prod`for smaller image sizes
+  - Removed dev-only artifacts from production containers
+- Disabled inline sources in `tsconfig.json`.
+- **Rate Limiting Configuration:**
+
+  - Modified global rate limiter to exclude Fly.io health checks:
+
+  ```TypeScript
+  ...
+  skip: (req) => {
+   return (
+     req.path === '/api/v1/health/ready'
+      && !!req.get('user-agent')?.includes('Consul Health Check')
+    ) ?
+     true
+    : false;
+  },
+  ```
+
+  - Maintained existing 15-minute/10-requests limit for all other endpoints
+
+### Security
+
+- Preserved `standardHeaders: 'draft-8'` for RFC-compliant rate limit headers.
+- Kept `legacyHeaders: false` to prevent header pollution.
+
+### Fixed
+
+- N/A
+
+### Refactored
+
+- N/A
+
+### Removed
+
+- Standalone health router in the `src/routes/` directory.
+
+### Documentation
+
+- Expanded project structure diagram in `README.md` to include:
+  - `src/api/`
+  - `tsconfig.prod.json`
+
 ## [0.2.2] - 2025-05-25
 
 ### Added

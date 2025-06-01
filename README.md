@@ -280,6 +280,7 @@ codstats-api/
 ├─ public/                    # Static assets (favicon, etc.)
 ├─ scripts/                   # Custom scripts (build, deployment automation)
 ├─ src/                       # Application source code
+│  ├─ api/                    # API features and modules
 │  ├─ common/                 # Shared types and constants
 │  ├─ libs/                   # Core express setup, CORS, helmet
 │  ├─ middleware/             # API middleware (error, redirect, 404)
@@ -310,6 +311,7 @@ codstats-api/
 ├─ README.md                  # Project overview, setup instructions, and documentation
 ├─ tsconfig.json              # TypeScript
 └─ tsconfig.lint.json         # TypeScript config used for linting (ESLint scope)
+└─ tsconfig.prod.json         # TypeScript config used for production
 ```
 
 ## Database Schema
