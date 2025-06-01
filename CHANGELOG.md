@@ -73,8 +73,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Security
 
-- Preserved `standardHeaders: 'draft-8'` for RFC-compliant rate limit headers
-- Kept `legacyHeaders: false` to prevent header pollution
+- Preserved `standardHeaders: 'draft-8'` for RFC-compliant rate limit headers.
+- Kept `legacyHeaders: false` to prevent header pollution.
+
+### Fixed
+
+- N/A
+
+### Refactored
+
+- N/A
 
 ### Removed
 
